@@ -1,6 +1,6 @@
 # Esrijs4-vm-ember
 
-Demo Ember app using [View Models in ArcGIS JS API 4.0beta3](https://developers.arcgis.com/javascript/beta/guide/whats-new/index.html)
+Demo app using [Ember-CLI 2.2.0 beta6](https://guides.emberjs.com/v2.2.0/) and [View Models in ArcGIS JS API 4.0beta3](https://developers.arcgis.com/javascript/beta/guide/whats-new/index.html)
 
 ## Prerequisites
 
