@@ -20,11 +20,12 @@ module.exports = function(environment) {
     contentSecurityPolicy: {
       'default-src': "'none'",
       'script-src': "'self' 'unsafe-eval' 'unsafe-inline' http://js.arcgis.com/ https://js.arcgis.com/",
-      'font-src': "'self' 'unsafe-inline' https://fonts.gstatic.com/",
+      'font-src': "'self' 'unsafe-inline' data: https://fonts.gstatic.com/ http://js.arcgis.com/ https://js.arcgis.com/",
       'connect-src': "'self' http://services.arcgis.com/ http://services.arcgisonline.com/ http://basemaps.arcgis.com https://www.arcgis.com http://js.arcgis.com http://static.arcgis.com/",
-      'img-src': "'self' http://js.arcgis.com/ https://js.arcgis.com/ http://services.arcgis.com",
-      'style-src': "'self' https://js.arcgis.com/ https://fonts.googleapis.com/",
-      'media-src': "'self'"
+      'img-src': "'self' http://js.arcgis.com/ https://js.arcgis.com/ http://services.arcgis.com blob:",
+      'style-src': "'self' 'unsafe-inline' https://js.arcgis.com/ https://fonts.googleapis.com/",
+      'media-src': "'self'",
+      'child-src': "'self' blob:"
     }
   };
 

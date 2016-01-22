@@ -5,13 +5,13 @@ export default Ember.Component.extend({
 
   classNames: ['locate', 'action'],
 
-  createLocate: function() {
-    let view = this.get('view');
-    let graphicsLayer = view.map.getLayer('graphics');
-    let vm = new LocateVM({ view, graphicsLayer });
-    vm.initialize();
+  createLocate: Ember.observer('mapView', function() {
+    let mapView = this.get('mapView');
+    let gl = mapView.map.getLayer('graphics');
+    let vm = new LocateVM({ view:mapView, graphicsLayer:gl });
+    //vm.initialize();
     this.set('vm', vm);
-  }.observes('view'),
+  }),
 
   actions: {
     enable() {

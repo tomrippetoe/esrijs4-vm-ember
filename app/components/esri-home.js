@@ -7,11 +7,11 @@ export default Ember.Component.extend({
 
   vm: null,
 
-  createHome: function() {
-    let view = this.get('view');
-    let vm = new HomeVM({ view });
+  createHome: Ember.observer('mapView', function() {
+    let mapView = this.get('mapView');
+    let vm = new HomeVM({ view: mapView });
     this.set('vm', vm);
-  }.observes('view'),
+  }),
 
   actions: {
     enable() {

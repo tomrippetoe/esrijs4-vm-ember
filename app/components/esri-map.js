@@ -15,15 +15,15 @@ export default Ember.Component.extend({
     }
   },
 
-  createMap: function() {
-    let map = this.get('map');
-    let view = new MapView({
-      map,
+  createMap: Ember.observer('map', function() {
+    let theMap = this.get('map');
+    let mapView = new MapView({
+      map: theMap,
       container: this.elementId,
       center: [-100.33, 25.69],
       zoom: 10
     });
-    view.then(x => this.set('view', x));
-  }.observes('map')
+    mapView.then(x => this.set('mapView', x));
+  })
 
 });
